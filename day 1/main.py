@@ -1,4 +1,5 @@
 import itertools
+from functools import reduce
 
 
 find_sum = 2020
@@ -10,8 +11,10 @@ print(input_list)
 
 for numbers in itertools.combinations(input_list, 2):
     if sum(numbers) == find_sum:
-        print([input_list.index(number) for number in numbers])
+        number_position = ([input_list.index(number) for number in numbers])
 
+number_sum = input_list[number_position[0]] * input_list[number_position[1]]
 
-#print(input_list)
-
+print(input_list[number_position[0]])
+print(input_list[number_position[1]])
+print(number_sum)
